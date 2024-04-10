@@ -1,12 +1,12 @@
 import gspread
 from google.oauth2.service_account import Credentials
 
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
     ]
-
 
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
@@ -23,3 +23,13 @@ def get_income_data():
         print("Please enter income data.")
         print("Data should be three values: amount, description, date.")
         print("Example: 2000, Salary, 2024-04-01")
+
+       data_str = input("Enter your data here: ")
+
+        income_data = data_str.split(",")
+
+        if validate_data(income_data):
+            print("Data is valid!")
+            break
+
+    return income_data 
