@@ -33,3 +33,23 @@ def get_income_data():
             break
 
     return income_data 
+
+def validate_data(values):
+    """
+    Validate the income or expense data.
+    Checks if there are exactly 3 values and if the first value (amount) can be converted to a float.
+    """
+
+    if len(values) != 3:
+        print("Invalid data: Exactly 3 values required.")
+        return False
+    
+    try:
+        float(values[0])  # Check if amount is a valid number
+    except ValueError:
+        print("Invalid data: Amount must be a number.")
+        return False
+
+    # You can add additional validation here if needed
+
+    return True
