@@ -74,3 +74,13 @@ def calculate_total_income():
         except ValueError:
             print(f"Skipping non-numeric value: {row[0]}")
     return total_incomes
+
+def display_income_data():
+    """
+    Display all income data from the income worksheet.
+    """
+    print("Displaying income data...\n")
+    income_worksheet = SHEET.worksheet("income")
+    incomes = income_worksheet.get_all_values()
+    for row in incomes:
+        print(row)
