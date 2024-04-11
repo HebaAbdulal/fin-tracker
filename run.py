@@ -51,3 +51,12 @@ def validate_data(values):
         return False
 
     return True
+
+def update_income_worksheet(data):
+    """
+    Update income worksheet, add new row with the income data provided.
+    """
+    print("Updating incomee worksheet...\n")
+    income_worksheet = SHEET.worksheet("income")
+    income_worksheet.append_row(data)
+    print("Income worksheet updated successfully.\n")
