@@ -182,3 +182,12 @@ def get_expenses_data():
     expenses_data = [amount, description, date]
 
     return expenses_data
+
+def update_expenses_worksheet(data):
+    """
+    Update expense worksheet, add new row with the expense data provided.
+    """
+    print("Updating expense worksheet...\n")
+    expenses_worksheet = SHEET.worksheet("expenses")
+    expenses_worksheet.append_row(data)
+    print("Expense worksheet updated successfully.\n")
