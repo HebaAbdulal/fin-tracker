@@ -162,3 +162,23 @@ def get_expense_date():
             return date_str
         except ValueError:
             print("Invalid date format. Please enter the date in the format 'YYYY-MM-DD'.")
+
+def get_expenses_data():
+    """
+    Get expenses data from the user
+    """
+
+    print("Please enter expenses data.")
+
+    # Get amount
+    amount = get_expense_amount()
+
+    # Get description
+    description = get_expense_description()
+
+    # Get date
+    date = get_expense_date()
+
+    expenses_data = [amount, description, date]
+
+    return expenses_data
