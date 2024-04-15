@@ -116,3 +116,11 @@ def display_income_data():
     incomes = income_worksheet.get_all_values()
     for row in incomes:
         print(row)
+
+def calculate_incomes():
+    """
+    Calculate incomes by displaying total incomes and income data.
+    """
+    total_incomes = calculate_total_income()
+    print(f"Total Incomes: ${total_incomes:.2f}\n")
+    display_income_data()
