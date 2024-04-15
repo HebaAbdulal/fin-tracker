@@ -206,3 +206,23 @@ def calculate_total_expenses():
             print(f"Skipping non-numeric value: {row[0]}")
     return total_expenses
 
+def display_expense_data():
+    """
+    Display all expense data from the expense worksheet in a table format.
+    """
+    print("Displaying expense data...\n")
+    expense_worksheet = SHEET.worksheet("expenses")
+    expenses = expense_worksheet.get_all_values()
+
+    # Create a table to display the expense data
+    table = Table(title="Expense Data")
+    table.add_column("Amount", justify="right")
+    table.add_column("Description", justify="right")
+    table.add_column("Date", justify="right")
+
+    # Skip the header row
+    for row in expenses[1:]:
+        table.add_row(*row)
+
+    console.print(table)
+
