@@ -25,3 +25,29 @@ def clear_terminal():
     Clears the terminal window prior to new content.
     """
     os.system('cls' if os.name == 'nt' else 'clear')
+
+def get_amount():
+    """
+    Get the amount of income and validate that it is a positive number.
+    """
+    while True:
+        amount_str = input("Enter the amount of income: ")
+        try:
+            amount = float(amount_str)
+            if amount <= 0:
+                print("Invalid amount: Amount must be a positive number.")
+            else:
+                return amount
+        except ValueError:
+            print("Invalid amount: Please enter a valid number.")
+
+def get_description():
+    """
+    Get the description of income and validate that it contains only letters.
+    """
+    while True:
+        description = input("Enter the description of income: ")
+        if description.isalpha():
+            return description
+        else:
+            print("Invalid description: Description must contain only letters.")
