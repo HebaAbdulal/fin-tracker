@@ -19,3 +19,9 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('fin-tracker')
 
 console = Console()
+
+def clear_terminal():
+    """
+    Clears the terminal window prior to new content.
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
