@@ -150,3 +150,15 @@ def get_expense_description():
             return description
         else:
             print("Invalid description: Description must contain only letters.")
+
+def get_expense_date():
+    """
+    Get the date of expenses and validate that it is in the correct format.
+    """
+    while True:
+        date_str = input("Enter the date of expenses (YYYY-MM-DD): ")
+        try:
+            datetime.strptime(date_str, '%Y-%m-%d')
+            return date_str
+        except ValueError:
+            print("Invalid date format. Please enter the date in the format 'YYYY-MM-DD'.")
