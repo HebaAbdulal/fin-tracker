@@ -191,3 +191,18 @@ def update_expenses_worksheet(data):
     expenses_worksheet = SHEET.worksheet("expenses")
     expenses_worksheet.append_row(data)
     print("Expense worksheet updated successfully.\n")
+
+def calculate_total_expenses():
+    """
+    Calculate the total expenses recorded in the expenses worksheet.
+    """
+    expense_worksheet = SHEET.worksheet("expenses")
+    expenses = expense_worksheet.get_all_values()
+    total_expenses = 0
+    for row in expenses[1:]:  # Skip header row
+        try:
+            total_expenses += float(row[0])  # Assuming Amount is in the first column
+        except ValueError:
+            print(f"Skipping non-numeric value: {row[0]}")
+    return total_expenses
+
