@@ -92,3 +92,17 @@ def update_income_worksheet(data):
     income_worksheet = SHEET.worksheet("income")
     income_worksheet.append_row(data)
     print("Income worksheet updated successfully.\n")
+
+def calculate_total_income():
+    """
+    Calculate the total incomes recorded in the income worksheet.
+    """
+    income_worksheet = SHEET.worksheet("income")
+    incomes = income_worksheet.get_all_values()
+    total_incomes = 0
+    for row in incomes[1:]:  # Skip header row
+        try:
+            total_incomes += float(row[0])  # Assuming Amount is in the first column
+        except ValueError:
+            print(f"Skipping non-numeric value: {row[0]}")
+    return total_incomes
