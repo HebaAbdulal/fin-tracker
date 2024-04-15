@@ -51,3 +51,15 @@ def get_description():
             return description
         else:
             print("Invalid description: Description must contain only letters.")
+
+def get_date():
+    """
+    Get the date of income and validate that it is in the correct format.
+    """
+    while True:
+        date_str = input("Enter the date of income (YYYY-MM-DD): ")
+        try:
+            datetime.strptime(date_str, '%Y-%m-%d')
+            return date_str
+        except ValueError:
+            print("Invalid date format. Please enter the date in the format 'YYYY-MM-DD'.")
