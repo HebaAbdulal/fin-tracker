@@ -124,3 +124,18 @@ def calculate_incomes():
     total_incomes = calculate_total_income()
     print(f"Total Incomes: ${total_incomes:.2f}\n")
     display_income_data()
+
+def get_expense_amount():
+    """
+    Get the amount of expenses and validate that it is a positive number.
+    """
+    while True:
+        amount_str = input("Enter the amount of expenses: ")
+        try:
+            amount = float(amount_str)
+            if amount <= 0:
+                print("Invalid amount: Amount must be a positive number.")
+            else:
+                return amount
+        except ValueError:
+            print("Invalid amount: Please enter a valid number.")
