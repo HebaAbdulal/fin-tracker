@@ -139,3 +139,14 @@ def get_expense_amount():
                 return amount
         except ValueError:
             print("Invalid amount: Please enter a valid number.")
+
+def get_expense_description():
+    """
+    Get the description of expenses and validate that it contains only letters.
+    """
+    while True:
+        description = input("Enter the description of expenses: ")
+        if description.replace(' ', '').isalpha():
+            return description
+        else:
+            print("Invalid description: Description must contain only letters.")
