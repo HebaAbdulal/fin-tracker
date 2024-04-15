@@ -63,3 +63,23 @@ def get_date():
             return date_str
         except ValueError:
             print("Invalid date format. Please enter the date in the format 'YYYY-MM-DD'.")
+
+def get_income_data():
+    """
+    Get income data from the user
+    """
+
+    print("Please enter income data.")
+
+    # Get amount
+    amount = get_amount()
+
+    # Get description
+    description = get_description()
+
+    # Get date
+    date = get_date()
+
+    income_data = [amount, description, date]
+
+    return income_data
