@@ -365,6 +365,10 @@ def update_budget_worksheet(budget_data):
         total_expenses_cell_offset = (description_cell.row, description_cell.col + 2)  # Offset by 1 column
         budget_worksheet.update_cell(*total_expenses_cell_offset, total_expenses)
 
+        # Update Budget for the current description
+        budget_cell_offset = (description_cell.row, description_cell.col + 1)  # Offset by 2 columns
+        budget_worksheet.update_cell(*budget_cell_offset, budget_amount)
+
 
     
 
