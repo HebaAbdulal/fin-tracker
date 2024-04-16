@@ -387,6 +387,12 @@ def main():
     Run all program functions.
     """
     print("Welcome to Expense Tracker")
+
+    # Set budget for different categories
+    budget_data = set_budget()  
+
+    # Clear the terminal window
+    clear_terminal()
     
     
 
