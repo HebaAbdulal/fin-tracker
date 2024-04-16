@@ -360,5 +360,11 @@ def update_budget_worksheet(budget_data):
         # Calculate total expenses for the current description
         total_expenses = calculate_total_expenses_for_description(description)
 
+        # Update Total Expenses column for the current description
+        description_cell = budget_worksheet.find(description)
+        total_expenses_cell_offset = (description_cell.row, description_cell.col + 2)  # Offset by 1 column
+        budget_worksheet.update_cell(*total_expenses_cell_offset, total_expenses)
+
+
     
 
