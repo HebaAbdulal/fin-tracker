@@ -415,6 +415,12 @@ def main():
     
     # Track expenses while considering budget limits
     track_expenses_with_budget(budget_data)
+
+    # Clear the terminal window
+    clear_terminal()
+
+    # Set and update budget
+    update_budget_worksheet(budget_data) 
     
 
 
