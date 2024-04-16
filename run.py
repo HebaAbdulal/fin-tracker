@@ -375,6 +375,11 @@ def update_budget_worksheet(budget_data):
         budget_status_cell_offset = (description_cell.row, description_cell.col + 3)  # Offset by 3 columns
         budget_worksheet.update_cell(*budget_status_cell_offset, budget_status)
 
+        # Update Notification for the current description
+        notification = "Alert" if remaining_amount < 0 else "Encouragement"
+        notification_cell_offset = (description_cell.row, description_cell.col + 4)  # Offset by 4 columns
+        budget_worksheet.update_cell(*notification_cell_offset, notification)
+
 
 
     
