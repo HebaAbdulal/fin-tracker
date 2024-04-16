@@ -409,6 +409,9 @@ def main():
 
         # Add the current income amount to total incomes
         total_incomes += income_data[0]
+
+    # Display total incomes after all incomes have been added
+    print(f"Total Incomes: ${total_incomes:.2f}\n")
     
     
 
