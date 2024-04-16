@@ -270,3 +270,10 @@ def analyze_expenses(budget_data):
         # Add a row to the table with the category and total expenses
         table.add_row(description, f"${total_expenses:.2f}", style=row_style)
 
+    # Print the expense summary table
+    console.print(table)
+
+    # Display the expense data
+    display_expense_data()
+
+
