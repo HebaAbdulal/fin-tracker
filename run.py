@@ -430,6 +430,22 @@ def main():
 
     # Explicitly print the remaining amount
     print_remaining_amount()
+
+    # Analyze expenses or exit the program
+    while True:
+        print("\n1. Analyze Expenses")
+        print("2. Exit\n")
+
+        choice = input("Enter your choice (1/2): ")
+
+        if choice == '1':
+            analyze_expenses(budget_data)  
+            break
+        elif choice == '2':
+            print("Exiting Expense Tracker. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter a valid option.")
     
 
 
