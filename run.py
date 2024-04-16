@@ -380,6 +380,8 @@ def update_budget_worksheet(budget_data):
         notification_cell_offset = (description_cell.row, description_cell.col + 4)  # Offset by 4 columns
         budget_worksheet.update_cell(*notification_cell_offset, notification)
 
+    print("Budget worksheet updated successfully.\n")
+
 
 
     
