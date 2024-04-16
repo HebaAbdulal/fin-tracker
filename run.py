@@ -267,3 +267,6 @@ def analyze_expenses(budget_data):
         # Set the row style to red if the total expenses exceed the budget
         row_style = Style(color="red") if total_expenses > budget_amount else None
 
+        # Add a row to the table with the category and total expenses
+        table.add_row(description, f"${total_expenses:.2f}", style=row_style)
+
