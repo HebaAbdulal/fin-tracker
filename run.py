@@ -264,3 +264,6 @@ def analyze_expenses(budget_data):
         # Calculate the total expenses for the current category
         total_expenses = calculate_total_expenses_for_description(description)
 
+        # Set the row style to red if the total expenses exceed the budget
+        row_style = Style(color="red") if total_expenses > budget_amount else None
+
