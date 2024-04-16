@@ -347,3 +347,11 @@ def calculate_total_expenses_for_description(description):
                 print(f"Error: {e}")
     return total_expenses
 
+def update_budget_worksheet(budget_data):
+    """
+    Update budget worksheet, add new rows with the budget data provided.
+    Also update Total Expenses and Budget Status columns.
+    """
+    print("Updating budget worksheet...\n")
+    budget_worksheet = SHEET.worksheet("budget")
+
