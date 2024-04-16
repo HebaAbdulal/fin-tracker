@@ -406,6 +406,9 @@ def main():
 
         # Update income worksheet
         update_income_worksheet(income_data)
+
+        # Add the current income amount to total incomes
+        total_incomes += income_data[0]
     
     
 
