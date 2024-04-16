@@ -231,3 +231,5 @@ def analyze_expenses():
     Analyze expenses by displaying total expenses and expense data in a table.
     """
 
+    total_expenses = calculate_total_expenses()
+
