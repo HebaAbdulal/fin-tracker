@@ -382,6 +382,14 @@ def update_budget_worksheet(budget_data):
 
     print("Budget worksheet updated successfully.\n")
 
+def main():
+    """
+    Run all program functions.
+    """
+    print("Welcome to Expense Tracker")
+    
+    
+
 
 
     
