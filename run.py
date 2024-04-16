@@ -369,6 +369,13 @@ def update_budget_worksheet(budget_data):
         budget_cell_offset = (description_cell.row, description_cell.col + 1)  # Offset by 2 columns
         budget_worksheet.update_cell(*budget_cell_offset, budget_amount)
 
+        # Update Budget Status for the current description
+        remaining_amount = budget_amount - total_expenses
+        budget_status = "Exceeded" if remaining_amount < 0 else "Within Budget"
+        budget_status_cell_offset = (description_cell.row, description_cell.col + 3)  # Offset by 3 columns
+        budget_worksheet.update_cell(*budget_status_cell_offset, budget_status)
+
+
 
     
 
