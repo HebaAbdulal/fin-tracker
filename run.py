@@ -421,6 +421,12 @@ def main():
 
     # Set and update budget
     update_budget_worksheet(budget_data) 
+
+    # Clear the terminal window
+    clear_terminal()
+
+    # Calculate remaining amount after expenses
+    calculate_remaining_amount()
     
 
 
