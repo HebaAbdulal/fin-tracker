@@ -355,3 +355,10 @@ def update_budget_worksheet(budget_data):
     print("Updating budget worksheet...\n")
     budget_worksheet = SHEET.worksheet("budget")
 
+    # Iterate over each description in the budget data
+    for description, budget_amount in budget_data.items():
+        # Calculate total expenses for the current description
+        total_expenses = calculate_total_expenses_for_description(description)
+
+    
+
