@@ -259,3 +259,8 @@ def analyze_expenses(budget_data):
     table.add_column("Category", justify="right")
     table.add_column("Total Expenses", justify="right")
 
+    # Iterate over each category in the budget data
+    for description, budget_amount in budget_data.items():
+        # Calculate the total expenses for the current category
+        total_expenses = calculate_total_expenses_for_description(description)
+
