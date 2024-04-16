@@ -413,6 +413,8 @@ def main():
     # Display total incomes after all incomes have been added
     print(f"Total Incomes: ${total_incomes:.2f}\n")
     
+    # Track expenses while considering budget limits
+    track_expenses_with_budget(budget_data)
     
 
 
