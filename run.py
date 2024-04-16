@@ -303,4 +303,10 @@ def set_budget():
                 print("Invalid input. Budget must be a positive number.")
     return budget_data
 
+def notify_budget_exceed(description, remaining_amount):
+    """
+    Notify the user when the budget for a category is exceeded.
+    """
+    print(f"Budget for {description} has been exceeded! Remaining amount: ${remaining_amount:.2f}")
+
 
