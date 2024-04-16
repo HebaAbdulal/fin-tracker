@@ -309,4 +309,14 @@ def notify_budget_exceed(description, remaining_amount):
     """
     print(f"Budget for {description} has been exceeded! Remaining amount: ${remaining_amount:.2f}")
 
+def track_expenses_with_budget(budget_data):
+    """
+    Track expenses while considering budget limits.
+    """
+    print("Tracking expenses with budget...")
+    while True:
+        expenses_data = get_expenses_data()  # Assuming there is a function to get expenses data
+        update_expenses_worksheet(expenses_data)  # Assuming there is a function to update expenses worksheet
+        calculate_remaining_amount()  # Assuming there is a function to calculate remaining amount
+
 
