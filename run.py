@@ -393,6 +393,16 @@ def main():
 
     # Clear the terminal window
     clear_terminal()
+
+    # Collect income data
+    total_incomes = 0  # Initialize total incomes
+    while True:
+        income_data = get_income_data()
+        print("Income data:", income_data)
+
+        choice = input("Do you want to add another income? (yes/no): ")
+        if choice.lower() != 'yes':
+            break
     
     
 
