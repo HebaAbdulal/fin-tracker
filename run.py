@@ -282,4 +282,25 @@ def print_remaining_amount():
     """
     print("\nRemaining Amount Calculated.\n")
 
+def set_budget():
+    """
+    Set budget for different expense categories.
+    """
+    print("Setting budget...")
+    descriptions = ["Groceries", "Utilities", "Entertainment"]  # List of categories
+    budget_data = {}
+    for description in descriptions:
+        while True:
+            budget_input = input(f"Enter budget for {description}: ")
+            if budget_input.replace('.', '', 1).isdigit():  # Check if input contains only digits and at most one dot
+                budget = float(budget_input)
+                if budget < 0:
+                    print("Budget cannot be negative.")
+                else:
+                    budget_data[description] = budget
+                    break
+            else:
+                print("Invalid input. Budget must be a positive number.")
+    return budget_data
+
 
