@@ -331,3 +331,19 @@ def track_expenses_with_budget(budget_data):
         if choice.lower() != 'yes':
             break  # Exit the loop if the user chooses not to add more expenses
 
+def calculate_total_expenses_for_description(description):
+    """
+    Calculate the total expenses for a specific description.
+    """
+    expense_worksheet = SHEET.worksheet("expenses")
+    expenses = expense_worksheet.get_all_values()
+    total_expenses = 0
+    for row in expenses[1:]:
+        if len(row) > 1 and row[1].strip() == description:  # Use strip() to remove any leading/trailing whitespace
+            try:
+                total_expenses += float(row[0])
+            except ValueError as e:
+                print(f"Skipping non-numeric value: {row[0]}")
+                print(f"Error: {e}")
+    return total_expenses
+
