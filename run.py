@@ -319,4 +319,12 @@ def track_expenses_with_budget(budget_data):
         update_expenses_worksheet(expenses_data)  # Assuming there is a function to update expenses worksheet
         calculate_remaining_amount()  # Assuming there is a function to calculate remaining amount
 
+         # Check if any budget is exceeded
+        for description, budget_amount in budget_data.items():
+            if description in expenses_data:
+                total_expenses = calculate_total_expenses_for_description(description)  # Assuming you have a function for this
+                remaining_amount = budget_amount - total_expenses
+                if remaining_amount < 0:
+                    notify_budget_exceed(description, remaining_amount)
+
 
