@@ -249,3 +249,13 @@ def calculate_remaining_amount():
     remaining_amount = total_incomes - total_expenses
     print(f"Remaining Amount: ${remaining_amount:.2f}\n")
 
+def analyze_expenses(budget_data):
+    """
+    Analyze expenses by displaying total expenses and expense data in a table.
+    Expenses exceeding the budget are highlighted in red.
+    """
+    # Create a table to display the expense summary
+    table = Table(title="Expense Summary")
+    table.add_column("Category", justify="right")
+    table.add_column("Total Expenses", justify="right")
+
