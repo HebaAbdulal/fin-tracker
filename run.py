@@ -327,4 +327,7 @@ def track_expenses_with_budget(budget_data):
                 if remaining_amount < 0:
                     notify_budget_exceed(description, remaining_amount)
 
+        choice = input("Do you want to add another expense? (yes/no): ")
+        if choice.lower() != 'yes':
+            break  # Exit the loop if the user chooses not to add more expenses
 
