@@ -427,6 +427,9 @@ def main():
 
     # Calculate remaining amount after expenses
     calculate_remaining_amount()
+
+    # Explicitly print the remaining amount
+    print_remaining_amount()
     
 
 
