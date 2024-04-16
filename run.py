@@ -403,6 +403,9 @@ def main():
         choice = input("Do you want to add another income? (yes/no): ")
         if choice.lower() != 'yes':
             break
+
+        # Update income worksheet
+        update_income_worksheet(income_data)
     
     
 
