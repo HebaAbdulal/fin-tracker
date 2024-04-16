@@ -226,3 +226,8 @@ def display_expense_data():
 
     console.print(table)
 
+def analyze_expenses():
+    """
+    Analyze expenses by displaying total expenses and expense data in a table.
+    """
+
