@@ -233,3 +233,19 @@ def analyze_expenses():
 
     total_expenses = calculate_total_expenses()
 
+    table = Table(title="Expense Summary")
+    table.add_column("Total Expenses", justify="right")
+    table.add_row(f"${total_expenses:.2f}")
+
+    console.print(table)
+    display_expense_data()
+
+def calculate_remaining_amount():
+    """
+    Calculate ramaining amount after taking off all expenses.
+    """
+    total_incomes = calculate_total_income()
+    total_expenses = calculate_total_expenses()
+    remaining_amount = total_incomes - total_expenses
+    print(f"Remaining Amount: ${remaining_amount:.2f}\n")
+
