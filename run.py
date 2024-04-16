@@ -276,4 +276,10 @@ def analyze_expenses(budget_data):
     # Display the expense data
     display_expense_data()
 
+def print_remaining_amount():
+    """
+    Print the remaining amount after calculating it.
+    """
+    print("\nRemaining Amount Calculated.\n")
+
 
