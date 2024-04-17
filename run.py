@@ -319,7 +319,7 @@ def track_expenses_with_budget(budget_data):
         update_expenses_worksheet(expenses_data)  # Assuming there is a function to update expenses worksheet
         calculate_remaining_amount()  # Assuming there is a function to calculate remaining amount
 
-         # Check if any budget is exceeded
+        # Check if any budget is exceeded
         for description, budget_amount in budget_data.items():
             if description in expenses_data:
                 total_expenses = calculate_total_expenses_for_description(description)  # Assuming you have a function for this
@@ -330,6 +330,12 @@ def track_expenses_with_budget(budget_data):
         choice = input("Do you want to add another expense? (yes/no): ")
         if choice.lower() != 'yes':
             break  # Exit the loop if the user chooses not to add more expenses
+
+    # Calculate remaining amount
+    calculate_remaining_amount()
+
+    return total_incomes
+
 
 def calculate_total_expenses_for_description(description):
     """
@@ -346,6 +352,19 @@ def calculate_total_expenses_for_description(description):
                 print(f"Skipping non-numeric value: {row[0]}")
                 print(f"Error: {e}")
     return total_expenses
+
+def display_budget(budget_data):
+    """
+    Display the budget summary.
+    """
+    table = Table(title="Budget Summary")
+    table.add_column("Category", justify="right")
+    table.add_column("Budget Amount", justify="right")
+
+    for category, amount in budget_data.items():
+        table.add_row(category, f"${amount:.2f}")
+
+    console.print(table)
 
 def update_budget_worksheet(budget_data):
     """
@@ -382,27 +401,25 @@ def update_budget_worksheet(budget_data):
 
     print("Budget worksheet updated successfully.\n")
 
+total_incomes = 0  # Initialize total incomes
+
 def main():
     """
     Run all program functions.
     """
+    global total_incomes  # Declare total_incomes as a global variable to modify it inside the function
     print("Welcome to Expense Tracker")
-
+    
     # Set budget for different categories
     budget_data = set_budget()  
 
     # Clear the terminal window
     clear_terminal()
-
+    
     # Collect income data
-    total_incomes = 0  # Initialize total incomes
     while True:
         income_data = get_income_data()
         print("Income data:", income_data)
-
-        choice = input("Do you want to add another income? (yes/no): ")
-        if choice.lower() != 'yes':
-            break
 
         # Update income worksheet
         update_income_worksheet(income_data)
@@ -410,9 +427,13 @@ def main():
         # Add the current income amount to total incomes
         total_incomes += income_data[0]
 
+        choice = input("Do you want to add another income? (yes/no): ")
+        if choice.lower() != 'yes':
+            break
+
     # Display total incomes after all incomes have been added
     print(f"Total Incomes: ${total_incomes:.2f}\n")
-    
+
     # Track expenses while considering budget limits
     track_expenses_with_budget(budget_data)
 
@@ -420,7 +441,7 @@ def main():
     clear_terminal()
 
     # Set and update budget
-    update_budget_worksheet(budget_data) 
+    update_budget_worksheet(budget_data)  
 
     # Clear the terminal window
     clear_terminal()
@@ -449,9 +470,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
-
-
-
-    
-
