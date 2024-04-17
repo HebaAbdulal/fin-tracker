@@ -31,7 +31,7 @@ def get_amount():
     Get the amount of income and validate that it is a positive number.
     """
     while True:
-        amount_str = input("Enter the amount of income: ")
+        amount_str = input("Enter the amount of income:\n")
         try:
             amount = float(amount_str)
             if amount <= 0:
@@ -46,7 +46,7 @@ def get_description():
     Get the description of income and validate that it contains only letters.
     """
     while True:
-        description = input("Enter the description of income: ")
+        description = input("Enter the description of income:\n")
         if description.isalpha():
             return description
         else:
@@ -57,7 +57,7 @@ def get_date():
     Get the date of income and validate that it is in the correct format.
     """
     while True:
-        date_str = input("Enter the date of income (YYYY-MM-DD): ")
+        date_str = input("Enter the date of income (YYYY-MM-DD):\n")
         try:
             datetime.strptime(date_str, '%Y-%m-%d')
             return date_str
@@ -130,7 +130,7 @@ def get_expense_amount():
     Get the amount of expenses and validate that it is a positive number.
     """
     while True:
-        amount_str = input("Enter the amount of expenses: ")
+        amount_str = input("Enter the amount of expenses:\n")
         try:
             amount = float(amount_str)
             if amount <= 0:
@@ -145,7 +145,7 @@ def get_expense_description():
     Get the description of expenses and validate that it contains only letters.
     """
     while True:
-        description = input("Enter the description of expenses (Groceries, Utilities, Entertainment): ")
+        description = input("Enter the description of expenses (Groceries, Utilities, Entertainment):\n")
         if description.replace(' ', '').isalpha():
             return description
         else:
@@ -156,7 +156,7 @@ def get_expense_date():
     Get the date of expenses and validate that it is in the correct format.
     """
     while True:
-        date_str = input("Enter the date of expenses (YYYY-MM-DD): ")
+        date_str = input("Enter the date of expenses (YYYY-MM-DD):\n")
         try:
             datetime.strptime(date_str, '%Y-%m-%d')
             return date_str
@@ -291,7 +291,7 @@ def set_budget():
     budget_data = {}
     for description in descriptions:
         while True:
-            budget_input = input(f"Enter budget for {description}: ")
+            budget_input = input(f"Enter budget for {description}:\n")
             if budget_input.replace('.', '', 1).isdigit():  # Check if input contains only digits and at most one dot
                 budget = float(budget_input)
                 if budget < 0:
@@ -327,7 +327,7 @@ def track_expenses_with_budget(budget_data):
                 if remaining_amount < 0:
                     notify_budget_exceed(description, remaining_amount)
 
-        choice = input("Do you want to add another expense? (yes/no): ")
+        choice = input("Do you want to add another expense? (yes/no):\n")
         if choice.lower() != 'yes':
             break  # Exit the loop if the user chooses not to add more expenses
 
@@ -427,7 +427,7 @@ def main():
         # Add the current income amount to total incomes
         total_incomes += income_data[0]
 
-        choice = input("Do you want to add another income? (yes/no): ")
+        choice = input("Do you want to add another income? (yes/no):\n")
         if choice.lower() != 'yes':
             break
 
@@ -457,7 +457,7 @@ def main():
         print("\n1. Analyze Expenses")
         print("2. Exit\n")
 
-        choice = input("Enter your choice (1/2): ")
+        choice = input("Enter your choice (1/2):\n")
 
         if choice == '1':
             analyze_expenses(budget_data)  
