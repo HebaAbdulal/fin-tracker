@@ -145,7 +145,7 @@ def get_expense_description():
     Get the description of expenses and validate that it contains only letters.
     """
     while True:
-        description = input("Enter the description of expenses: ")
+        description = input("Enter the description of expenses (Groceries, Utilities, Entertainment): ")
         if description.replace(' ', '').isalpha():
             return description
         else:
