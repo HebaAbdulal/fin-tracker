@@ -49,3 +49,24 @@ With Fin Tracker, managing your finances has never been easier. Say goodbye to t
     - __Validate input: Ensure positive numbers; provide error feedback.__
 [Screenshot of expense input and validation screen](assets/images/expense-validation.png)
     - __Data stored in "fin-tracker" Google Sheets.__
+- Financial Analysis:
+    - __Summary: Total incomes, expenses.__
+    - __Budget allocation: Summary of budget vs. actual expenses.__
+    - __Calculate remaining amount.__
+[Screenshot of remaining amount](assets/images/remaining-amount.png)
+<br>
+
+- User Interaction:
+    - __Prompted options: Add income, expense, or exit.__
+    - __Feedback on invalid inputs.__
+<br>
+
+- Data Visualization:
+    - __Tabular display: Expense, income data.__
+[Screenshot of data visualization](assets/images/display.png)
+    - __Budget, expense summary tables.__
+<br>
+
+- Notification System:
+    - __Alert on budget exceedance.__
+[Screenshot of notification system](assets/images/notification.png)
