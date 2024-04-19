@@ -27,3 +27,25 @@ With Fin Tracker, managing your finances has never been easier. Say goodbye to t
 - As a returning user, I seek the ability to view and manage my financial data conveniently through a spreadsheet format provided by the Fin Tracker, allowing for easy tracking and analysis.
 - As a returning user, I desire a quick and efficient method within the Fin Tracker to determine intervention strategies for my students based on their financial performance, enabling me to provide timely support and guidance as needed.
 
+## Features
+- Budget Setting and Tracking:
+    - __Set budgets: For groceries, utilities, entertainment.__
+    - __Validate input: Ensure positive numbers; provide error feedback.__
+[Screenshot of budget entry and validation screen](assets/images/budget-validation.png)
+    - __Track expenses: Notify if exceeding budget.__
+[Screenshot of exceeded expense](assets/images/exceeded-expense.png)
+    - __Data stored in "fin-tracker" Google Sheets.__
+<br>
+
+- Income Tracking:
+    - __Input income data: Users input amount, description, and date.__
+    - __Validate input: Ensure positive numbers; provide error feedback.__
+[Screenshot of income input and validation screen](assets/images/income-validation.png)
+    - __Data stored in "fin-tracker" Google Sheets.__
+<br>
+
+- Expense Tracking:
+    - __Input expense data: Amount, description, date.__
+    - __Validate input: Ensure positive numbers; provide error feedback.__
+[Screenshot of expense input and validation screen](assets/images/expense-validation.png)
+    - __Data stored in "fin-tracker" Google Sheets.__
