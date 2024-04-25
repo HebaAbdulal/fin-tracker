@@ -466,4 +466,29 @@ def remove_income_worksheet(index):
         print("Invalid index. Please enter a valid index.")
 
 
+def remove_income():
+    """
+    Function to remove income.
+    """
+    print("Removing row from income worksheet...\n")
+    income_worksheet = SHEET.worksheet("income")
+
+    # Display current income data before removal
+    display_income_data()
+
+    index = get_income_index()
+
+    # Retrieve all income data from the worksheet
+    incomes = income_worksheet.get_all_values()
+
+    # Check if the index is within the range of the available income data
+    if index > 0 and index <= len(incomes):
+        # Delete the row at the specified index
+        income_worksheet.delete_rows(index)
+
+        print("Income removed successfully.\n")
+    else:
+        print("Invalid index. Please enter a valid index.")
+
+
 total_incomes = 0  # Initialize total incomes
