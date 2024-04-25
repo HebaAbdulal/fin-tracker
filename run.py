@@ -606,6 +606,18 @@ def add_income():
         print("Invalid choice. Please enter a valid option.")
 
 
+def add_expense():
+    """
+    Function to add, update, or remove expense.
+    """
+    print("Add Expense\n")
+    print("1. Add New Expense")
+    print("2. Update Existing Expense")
+    print("3. Remove Existing Expense")
+    print("4. Back to Main Menu")  # Added option to go back to the main menu
+    choice = input("Enter your choice (1-4):\n")
+
+
 
 
 total_incomes = 0  # Initialize total incomes
