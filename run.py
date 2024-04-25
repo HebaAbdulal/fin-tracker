@@ -685,6 +685,26 @@ def main_menu():
     print("5. Exit\n")
 
 
+def load_budget_data():
+    """
+    Load budget data from the existing worksheet.
+    If no budget data is found, return an empty dictionary.
+    """
+    budget_data = {}
+    try:
+        budget_worksheet = SHEET.worksheet("budget")
+        data = budget_worksheet.get_all_values()
+        if len(data) > 1:
+            for row in data[1:]:
+                category = row[0]
+                budget_amount = float(row[1])
+                budget_data[category] = budget_amount
+    except Exception as e:
+        print(f"An error occurred while loading budget data: {e}")
+    return budget_data
+
+
+
 
 
 
