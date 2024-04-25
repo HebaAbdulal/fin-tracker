@@ -596,63 +596,67 @@ def add_income():
     """
     Function to add, update, or remove income.
     """
-    print("Add Income\n")
-    print("1. Add New Income")
-    print("2. Update Existing Income")
-    print("3. Remove Existing Income")
-    print("4. Back to Main Menu")  # Added option to go back to the main menu
-    choice = input("Enter your choice (1-4):\n")
+    while True:
+        print("Add Income\n")
+        print("1. Add New Income")
+        print("2. Update Existing Income")
+        print("3. Remove Existing Income")
+        print("4. Back to Main Menu")  # Added option to go back to the main menu
+        choice = input("Enter your choice (1-4):\n")
 
-    if choice == '1':
-        print("Adding New Income\n")
-        income_data = get_income_data()
-        print("Income data:", income_data)
-        update_income_worksheet(income_data)
-        calculate_incomes()
-    elif choice == '2':
-        print("Updating Existing Income\n")
-        update_income()
-        calculate_incomes()
-    elif choice == '3':
-        print("Removing Existing Income\n")
-        remove_income()
-        calculate_incomes()
-    elif choice == '4':
-        # Go back to the main menu
-        main_menu()
-    else:
-        print("Invalid choice. Please enter a valid option.")
+        if choice == '1':
+            print("Adding New Income\n")
+            income_data = get_income_data()
+            print("Income data:", income_data)
+            update_income_worksheet(income_data)
+            calculate_incomes()
+        elif choice == '2':
+            print("Updating Existing Income\n")
+            update_income()
+            calculate_incomes()
+        elif choice == '3':
+            print("Removing Existing Income\n")
+            remove_income()
+            calculate_incomes()
+        elif choice == '4':
+            # Go back to the main menu
+            main_menu()
+            break  # Exit the loop to return to the main menu
+        else:
+            print("Invalid choice. Please enter a valid option.\n")
 
 
 def add_expense():
     """
     Function to add, update, or remove expense.
     """
-    print("Add Expense\n")
-    print("1. Add New Expense")
-    print("2. Update Existing Expense")
-    print("3. Remove Existing Expense")
-    print("4. Back to Main Menu")  # Added option to go back to the main menu
-    choice = input("Enter your choice (1-4):\n")
+    while True:
+        print("Add Expense\n")
+        print("1. Add New Expense")
+        print("2. Update Existing Expense")
+        print("3. Remove Existing Expense")
+        print("4. Back to Main Menu")  # Added option to go back to the main menu
+        choice = input("Enter your choice (1-4):\n")
 
-    if choice == '1':
-        print("Adding New Expense\n")
-        expense_data = get_expenses_data()
-        print("Expense data:", expense_data)
-        update_expenses_worksheet(expense_data)
-        update_budget_worksheet(budget_data)
-    elif choice == '2':
-        print("Updating Existing Expense\n")
-        update_expense()
-    elif choice == '3':
-        print("Removing Existing Expense\n")
-        remove_expense()
-        print("The expense has been removed\n")
-    elif choice == '4':
-        # Go back to the main menu
-        main_menu()
-    else:
-        print("Invalid choice. Please enter a valid option.")
+        if choice == '1':
+            print("Adding New Expense\n")
+            expense_data = get_expenses_data()
+            print("Expense data:", expense_data)
+            update_expenses_worksheet(expense_data)
+            update_budget_worksheet(budget_data)
+        elif choice == '2':
+            print("Updating Existing Expense\n")
+            update_expense()
+        elif choice == '3':
+            print("Removing Existing Expense\n")
+            remove_expense()
+            print("The expense has been removed\n")
+        elif choice == '4':
+            # Go back to the main menu
+            main_menu()
+            break
+        else:
+            print("Invalid choice. Please enter a valid option.")
 
 
 def analyze_expenses_report(budget_data):
