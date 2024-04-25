@@ -574,5 +574,18 @@ def remove_expense():
 budget_data = {}
 
 
+def add_income():
+    """
+    Function to add, update, or remove income.
+    """
+    print("Add Income\n")
+    print("1. Add New Income")
+    print("2. Update Existing Income")
+    print("3. Remove Existing Income")
+    print("4. Back to Main Menu")  # Added option to go back to the main menu
+    choice = input("Enter your choice (1-4):\n")
+
+
+
 
 total_incomes = 0  # Initialize total incomes
