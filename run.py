@@ -546,4 +546,29 @@ def remove_expense_worksheet(index):
     print("Row removed successfully.\n")
 
 
+def remove_expense():
+    """
+    Function to remove expense.
+    """
+    print("Removing row from expense worksheet...\n")
+    expense_worksheet = SHEET.worksheet("expenses")
+
+    # Display current expense data before removal
+    display_expense_data()
+
+    index = get_expense_index()
+
+    # Retrieve all income data from the worksheet
+    expenses = expense_worksheet.get_all_values()
+
+    # Check if the index is within the range of the available income data
+    if index > 0 and index <= len(expenses):
+        # Delete the row at the specified index
+        expense_worksheet.delete_rows(index)
+
+        print("Expense removed successfully.\n")
+    else:
+        print("Invalid index. Please enter a valid index.")
+
+
 total_incomes = 0  # Initialize total incomes
