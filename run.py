@@ -434,9 +434,9 @@ def update_income():
     """
     display_income_data()
     index = get_income_index()
-    updated_income_data = get_income_data()  
+    updated_income_data = get_income_data()
     update_income_worksheet(updated_income_data)
-    
+
 
 def remove_income_worksheet(index):
     """
