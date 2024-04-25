@@ -617,6 +617,25 @@ def add_expense():
     print("4. Back to Main Menu")  # Added option to go back to the main menu
     choice = input("Enter your choice (1-4):\n")
 
+    if choice == '1':
+        print("Adding New Expense\n")
+        expense_data = get_expenses_data()
+        print("Expense data:", expense_data)
+        update_expenses_worksheet(expense_data)
+        update_budget_worksheet(budget_data)
+    elif choice == '2':
+        print("Updating Existing Expense\n")
+        update_expense()
+    elif choice == '3':
+        print("Removing Existing Expense\n")
+        remove_expense()
+        print("The expense has been removed\n")
+    elif choice == '4':
+        # Go back to the main menu
+        main_menu()
+    else:
+        print("Invalid choice. Please enter a valid option.")
+
 
 
 
