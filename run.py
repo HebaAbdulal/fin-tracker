@@ -637,6 +637,18 @@ def add_expense():
         print("Invalid choice. Please enter a valid option.")
 
 
+def analyze_expenses_report(budget_data):
+    """
+    Analyze expenses by displaying total expenses and expense data in a table.
+    Expenses exceeding the budget are highlighted in red.
+    """
+    print("Analyzing Expenses\n")
+    # Create a table to display the expense summary
+    table = Table(title="Expense Summary")
+    table.add_column("Category", justify="right")
+    table.add_column("Total Expenses", justify="right")
+
+
 
 
 total_incomes = 0  # Initialize total incomes
