@@ -19,6 +19,37 @@ Key features of Fin Tracker include:
 - Customizable Notifications: Receive alerts when your expenses exceed budget limits, helping you stay on track with your financial goals.
 
 With Fin Tracker, managing your finances has never been easier. Say goodbye to the hassle of manual expense tracking and take control of your money today!
+<br>
+
+## Contents
+
+### User Experience (UX)
+
+- __User Stories__
+
+### Design
+
+- __Flowchart__
+- __Features__
+
+### Technologies Used
+
+- __Languages Used__
+- __Frameworks, Libraries and Programs used__
+
+### Deployment
+- __Deployment__
+
+### Testing
+
+- __CI Python Linter__
+- __Manual Testing__
+- __Solved Bug__
+### Credits
+
+- __Content__
+- __Acknowledgments__
+
 
 ## User Stories
 - As a first time user, I want the input system of the Fin Tracker to be intuitive and straightforward, guiding me through each step clearly.
@@ -27,7 +58,13 @@ With Fin Tracker, managing your finances has never been easier. Say goodbye to t
 - As a returning user, I seek the ability to view and manage my financial data conveniently through a spreadsheet format provided by the Fin Tracker, allowing for easy tracking and analysis.
 - As a returning user, I desire a quick and efficient method within the Fin Tracker to determine intervention strategies for my students based on their financial performance, enabling me to provide timely support and guidance as needed.
 
-## Features
+## Design
+
+### Flowchart
+[First draft flowchart made before starting the project](assets/images/flowchart.png)
+<br>
+
+### Features
 - Budget Setting and Tracking:
     - __Set budgets: For groceries, utilities, entertainment.__
     - __Validate input: Ensure positive numbers; provide error feedback.__
@@ -72,10 +109,6 @@ With Fin Tracker, managing your finances has never been easier. Say goodbye to t
 [Screenshot of notification system](assets/images/notification.png)
 <br>
 
-## Flowchart
-[First draft flowchart made before starting the project](assets/images/flowchart.png)
-<br>
-
 ## Technologies used
 ### Languages
 - [Python](https://www.python.org/doc/essays/blurb/)
@@ -96,16 +129,13 @@ With Fin Tracker, managing your finances has never been easier. Say goodbye to t
 - [Heroku](https://www.heroku.com/)
 <br>
 
-## Solved bug
-I encountered an issue during deployment due to the failure of pip3 freeze > requirements.txt to generate the required libraries automatically. Consequently, I manually searched for the missing libraries and their versions to resolve the issue.
-<br>
-
 ## Testing
+### CI Python Linter
 - I consistently tested the program throughout the development phase to guarantee its functionality.
 - Employed the CI Python Linter Checker tool to evaluate my code. The evaluation yielded no errors. [Screenshot of CI Python Linter result](assets/images/code-validation.png)
 <br>
 
-- Manual Testing
+### Manual Testing
 
 | Test Case | Description | Input | Expected Outcome | Actual Outcome | Pass/Fail |
 |-----------|-------------|-------|------------------|----------------|-----------|
@@ -137,8 +167,9 @@ I encountered an issue during deployment due to the failure of pip3 freeze > req
 | 26        | Invalid index for income removal (non-integer) | a | Display error message | Displayed error message | Pass |
 | 27        | Invalid index for income removal (negative integer) | -1 | Display error message | Displayed error message | Pass |
 
-
-
+### Solved bug
+I encountered an issue during deployment due to the failure of pip3 freeze > requirements.txt to generate the required libraries automatically. Consequently, I manually searched for the missing libraries and their versions to resolve the issue.
+<br>
 
 ## Deployment
 - The program was deployed on [Heroku](https://www.heroku.com/).
@@ -166,3 +197,14 @@ Deployment Steps:
 ## Future improvements
 - User Authentication: Implement user authentication to allow multiple users to track their income and expenses securely. This could include features like user registration, login, and password recovery.
 - Mobile Compatibility: Optimize the application for mobile devices to allow users to track their finances on the go. This could involve creating a responsive design or developing dedicated mobile apps for iOS and Android platforms.
+<br>
+
+## Credits
+### Content
+
+My project was inspired by Code Institute's Love Sandwiches project. I adapted the code, changed its purpose, and crafted unique functions to make it my own.
+<br>
+
+### Acknowledgements
+
+My mentor Matt Bodden for his support and assistance. 
