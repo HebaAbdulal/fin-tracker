@@ -535,4 +535,15 @@ def update_expense():
         print("Invalid index. Please enter a valid index.")
 
 
+def remove_expense_worksheet(index):
+    """
+    Remove row from expenses worksheet based on index.
+    """
+    print("Removing row from expense worksheet...\n")
+    expense_worksheet = SHEET.worksheet("expenses")
+    expense_worksheet.delete_row(index)
+
+    print("Row removed successfully.\n")
+
+
 total_incomes = 0  # Initialize total incomes
