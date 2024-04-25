@@ -508,4 +508,31 @@ def get_expense_index():
             print("Invalid index: Please enter a valid number.")
 
 
+def update_expense():
+    """
+    Function to update expense.
+    """
+    display_expense_data()
+    index = get_expense_index()
+    updated_expense_data = get_expenses_data()
+
+    # Retrieve all expense data from the worksheet
+    expense_worksheet = SHEET.worksheet("expenses")
+    expenses = expense_worksheet.get_all_values()
+
+    # Check if the index is within the range of the available expense data
+    if index > 0 and index <= len(expenses):
+        # Update the expense data at the specified index
+        expenses[index - 1] = updated_expense_data
+
+        # Update the worksheet with the updated data
+        range_name = 'A{}:C{}'.format(index, index)
+        expense_worksheet.update(
+            values=[updated_expense_data], range_name=range_name)
+
+        print("Expense updated successfully.\n")
+    else:
+        print("Invalid index. Please enter a valid index.")
+
+
 total_incomes = 0  # Initialize total incomes
