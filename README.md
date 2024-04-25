@@ -105,6 +105,41 @@ I encountered an issue during deployment due to the failure of pip3 freeze > req
 - Employed the CI Python Linter Checker tool to evaluate my code. The evaluation yielded no errors. [Screenshot of CI Python Linter result](assets/images/code-validation.png)
 <br>
 
+- Manual Testing
+
+| Test Case | Description | Input | Expected Outcome | Actual Outcome | Pass/Fail |
+|-----------|-------------|-------|------------------|----------------|-----------|
+| 1         | Valid choice from main menu | 1 | Navigate to "Set Budget" | Navigated to "Set Budget" | Pass |
+| 2         | Valid choice from main menu | 2 | Navigate to "Add Income" | Navigated to "Add Income" | Pass |
+| 3         | Valid choice from main menu | 3 | Navigate to "Add Expense" | Navigated to "Add Expense" | Pass |
+| 4         | Valid choice from main menu | 4 | Navigate to "Analyze Expenses" | Navigated to "Analyze Expenses" | Pass |
+| 5         | Valid choice from main menu | 5 | Exit the application | Application exited | Pass |
+| 6         | Invalid choice from main menu | a | Display error message | Displayed error message | Pass |
+| 7         | Invalid choice from main menu | -1 | Display error message | Displayed error message | Pass |
+| 8         | Invalid choice from main menu | 6 | Display error message | Displayed error message | Pass |
+| 9         | Invalid choice from main menu | *empty* | Display error message | Displayed error message | Pass |
+| 10        | Valid choice from submenu | 1 | Add new income entry | Added new income entry | Pass |
+| 11        | Valid choice from submenu | 2 | Update existing income entry | Updated existing income entry | Pass |
+| 12        | Valid choice from submenu | 3 | Remove existing income entry | Removed existing income entry | Pass |
+| 13        | Valid choice from submenu | 4 | Navigate back to main menu | Navigated back to main menu | Pass |
+| 14        | Invalid choice from submenu | a | Display error message | Displayed error message | Pass |
+| 15        | Invalid choice from submenu | -1 | Display error message | Displayed error message | Pass |
+| 16        | Invalid choice from submenu | 5 | Display error message | Displayed error message | Pass |
+| 17        | Invalid choice from submenu | *empty* | Display error message | Displayed error message | Pass |
+| 18        | Valid index for income update | 1 | Navigate to update income entry with index 1 | Navigated to update income entry with index 1 | Pass |
+| 19        | Valid index for income update | 5 | Navigate to update income entry with index 5 | Navigated to update income entry with index 5 | Pass |
+| 20        | Invalid index for income update (out of range) | 10 | Display error message | Displayed error message | Pass |
+| 21        | Invalid index for income update (non-integer) | a | Display error message | Displayed error message | Pass |
+| 22        | Invalid index for income update (negative integer) | -1 | Display error message | Displayed error message | Pass |
+| 23        | Valid index for income removal | 1 | Remove income entry with index 1 | Removed income entry with index 1 | Pass |
+| 24        | Valid index for income removal | 5 | Remove income entry with index 5 | Removed income entry with index 5 | Pass |
+| 25        | Invalid index for income removal (out of range) | 10 | Display error message | Displayed error message | Pass |
+| 26        | Invalid index for income removal (non-integer) | a | Display error message | Displayed error message | Pass |
+| 27        | Invalid index for income removal (negative integer) | -1 | Display error message | Displayed error message | Pass |
+
+
+
+
 ## Deployment
 - The program was deployed on [Heroku](https://www.heroku.com/).
 - You can access the deployed application [here](https://fintracker-d91e74e9f79d.herokuapp.com/).
@@ -126,3 +161,8 @@ Deployment Steps:
 13. Next to "Deployment method", select "GitHub". Connect to your GitHub repository by typing its name, searching for it, and connecting to it.
 14. Enable automatic deploys and then manually deploy the branch.
 15. Wait for the app to be deployed.
+<br>
+
+## Future improvements
+- User Authentication: Implement user authentication to allow multiple users to track their income and expenses securely. This could include features like user registration, login, and password recovery.
+- Mobile Compatibility: Optimize the application for mobile devices to allow users to track their finances on the go. This could involve creating a responsive design or developing dedicated mobile apps for iOS and Android platforms.
