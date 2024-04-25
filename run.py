@@ -704,6 +704,19 @@ def load_budget_data():
     return budget_data
 
 
+def main():
+    """
+    Run all program functions.
+    """
+    global total_incomes, budget_data
+    print("Welcome to Expense Tracker")
+    print("Track your income and expenses, set budgets, and analyze spending")
+    print("Manage income, expenses, and budgets")
+
+    # Load budget data from the existing worksheet
+    budget_data = load_budget_data()
+
+
 
 
 
