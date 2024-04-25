@@ -435,7 +435,24 @@ def update_income():
     display_income_data()
     index = get_income_index()
     updated_income_data = get_income_data()
-    update_income_worksheet(updated_income_data)
+    
+    # Retrieve all income data from the worksheet
+    income_worksheet = SHEET.worksheet("income")
+    incomes = income_worksheet.get_all_values()
+
+    # Check if the index is within the range of the available income data
+    if index > 0 and index <= len(incomes):
+        # Update the income data at the specified index
+        incomes[index - 1] = updated_income_data
+
+        # Update the worksheet with the updated data
+        range_name = 'A{}:C{}'.format(index, index)
+        income_worksheet.update(
+            values=[updated_income_data], range_name=range_name)
+
+        print("Income updated successfully.\n")
+    else:
+        print("Invalid index. Please enter a valid index.")
 
 
 def remove_income_worksheet(index):
