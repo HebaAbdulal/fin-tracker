@@ -648,6 +648,31 @@ def analyze_expenses_report(budget_data):
     table.add_column("Category", justify="right")
     table.add_column("Total Expenses", justify="right")
 
+    # Iterate over each category in the budget data
+    for description, budget_amount in budget_data.items():
+        # Calculate the total expenses for the current category
+        total_expenses = calc_expenses(description)
+
+        # Set the row style based on budget status
+        if total_expenses > budget_amount:
+            style = "bright_red"
+        elif total_expenses < (budget_amount * 0.8):
+            style = "bright_green"
+        else:
+            style = "yellow1"
+
+        row_style = Style(color=style)
+
+        # Add a row to the table with the category and total expenses
+        table.add_row(description, f"${total_expenses:.2f}", style=row_style)
+
+    # Print the expense summary table
+    console.print(table)
+
+    # Display the expense data
+    display_expense_data()
+
+
 
 
 
