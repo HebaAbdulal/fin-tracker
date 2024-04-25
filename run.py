@@ -435,7 +435,7 @@ def update_income():
     display_income_data()
     index = get_income_index()
     updated_income_data = get_income_data()
-    
+
     # Retrieve all income data from the worksheet
     income_worksheet = SHEET.worksheet("income")
     incomes = income_worksheet.get_all_values()
