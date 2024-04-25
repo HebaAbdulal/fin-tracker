@@ -673,6 +673,18 @@ def analyze_expenses_report(budget_data):
     display_expense_data()
 
 
+def main_menu():
+    """
+    Display the main menu options.
+    """
+    print("Main Menu:")
+    print("1. Set Budget")
+    print("2. Add Income")
+    print("3. Add Expense")
+    print("4. Analyze Expenses")
+    print("5. Exit\n")
+
+
 
 
 
