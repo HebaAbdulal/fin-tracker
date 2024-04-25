@@ -601,7 +601,7 @@ def add_income():
         print("1. Add New Income")
         print("2. Update Existing Income")
         print("3. Remove Existing Income")
-        print("4. Back to Main Menu")  # Added option to go back to the main menu
+        print("4. Back to Main Menu")
         choice = input("Enter your choice (1-4):\n")
 
         if choice == '1':
@@ -635,7 +635,7 @@ def add_expense():
         print("1. Add New Expense")
         print("2. Update Existing Expense")
         print("3. Remove Existing Expense")
-        print("4. Back to Main Menu")  # Added option to go back to the main menu
+        print("4. Back to Main Menu")
         choice = input("Enter your choice (1-4):\n")
 
         if choice == '1':
