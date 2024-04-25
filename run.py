@@ -585,6 +585,26 @@ def add_income():
     print("4. Back to Main Menu")  # Added option to go back to the main menu
     choice = input("Enter your choice (1-4):\n")
 
+    if choice == '1':
+        print("Adding New Income\n")
+        income_data = get_income_data()
+        print("Income data:", income_data)
+        update_income_worksheet(income_data)
+        calculate_incomes()
+    elif choice == '2':
+        print("Updating Existing Income\n")
+        update_income()
+        calculate_incomes()
+    elif choice == '3':
+        print("Removing Existing Income\n")
+        remove_income()
+        calculate_incomes()
+    elif choice == '4':
+        # Go back to the main menu
+        main_menu()
+    else:
+        print("Invalid choice. Please enter a valid option.")
+
 
 
 
