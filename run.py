@@ -436,6 +436,17 @@ def update_income():
     index = get_income_index()
     updated_income_data = get_income_data()
 
+
+def remove_income_worksheet(index):
+    """
+    Remove row from income worksheet based on index.
+    """
+    print("Removing row from income worksheet...\n")
+    income_worksheet = SHEET.worksheet("income")
+    income_worksheet.delete_row(index)
+
+    print("Row removed successfully.\n")
+
     # Retrieve all income data from the worksheet
     income_worksheet = SHEET.worksheet("income")
     incomes = income_worksheet.get_all_values()
