@@ -70,3 +70,36 @@ With Fin Tracker, managing your finances has never been easier. Say goodbye to t
 - Notification System:
     - __Alert on budget exceedance.__
 [Screenshot of notification system](assets/images/notification.png)
+<br>
+
+## Flowchart
+[First draft flowchart made before starting the project](assets/images/flowchart.png)
+<br>
+
+## Technologies used
+### Languages
+- [Python](https://www.python.org/doc/essays/blurb/)
+<br>
+
+### Library imports
+- gspread 
+- google.oauth2.service_account
+- rich
+- os
+- datetime
+<br>
+
+### Other tools
+- [Google sheets](https://www.google.co.uk/sheets/about/)
+- [GitHub](https://github.com/)
+- [GitPod](https://gitpod.io/)
+- [Heroku](https://www.heroku.com/)
+<br>
+
+## Solved bug
+I encountered an issue during deployment due to the failure of pip3 freeze > requirements.txt to install the required libraries automatically. Consequently, I manually searched for the missing libraries and their versions to resolve the issue.
+<br>
+
+## Testing
+- I consistently tested the program throughout the development phase to guarantee its functionality.
+- Employed the PEP8 Python Checker tool to evaluate my code, achieving a score of 68% - Good. See the screenshot of the PEP8 score here. [Screenshot of PEP8 score](assets/images/pep8.png)
