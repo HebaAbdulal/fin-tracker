@@ -97,9 +97,32 @@ With Fin Tracker, managing your finances has never been easier. Say goodbye to t
 <br>
 
 ## Solved bug
-I encountered an issue during deployment due to the failure of pip3 freeze > requirements.txt to install the required libraries automatically. Consequently, I manually searched for the missing libraries and their versions to resolve the issue.
+I encountered an issue during deployment due to the failure of pip3 freeze > requirements.txt to generate the required libraries automatically. Consequently, I manually searched for the missing libraries and their versions to resolve the issue.
 <br>
 
 ## Testing
 - I consistently tested the program throughout the development phase to guarantee its functionality.
-- Employed the PEP8 Python Checker tool to evaluate my code, achieving a score of 68% - Good. See the screenshot of the PEP8 score here. [Screenshot of PEP8 score](assets/images/pep8.png)
+- Employed the CI Python Linter Checker tool to evaluate my code. The evaluation yielded no errors. [Screenshot of CI Python Linter result](assets/images/code-validation.png)
+<br>
+
+## Deployment
+- The program was deployed on [Heroku](https://www.heroku.com/).
+- You can access the deployed application [here](https://fintracker-d91e74e9f79d.herokuapp.com/).
+
+Deployment Steps:
+
+1. In the workspace (such as GitPod), run the command pip3 freeze > requirements.txt in the terminal. This command generates a list of requirements needed for the project to run and saves it in the requirements.txt file.
+2. Create a [Heroku](https://www.heroku.com/) account if you haven't already.
+3. After creating a Heroku account, navigate to the Dashboard and click on "Create New App" (you may need to click the "New" tab first and then select "Create New App" from the dropdown menu).
+4. Choose a unique name for your app and select the appropriate region.
+5. Once the app is created, go to the "Settings" section from the navigation bar.
+6. Scroll down to the "Config Vars" section and click on "Reveal Config Vars". 
+7. Add a new Config Var with "KEY" as "CREDS". Open the "creds.json" file from your workspace, copy its contents, and paste them into the "VALUE" field. Click "Add".
+8. Add another Config Var with "KEY" as "PORT" and "VALUE" as "8000".
+9. Scroll down to the "Buildpacks" section and click on "Add Buildpack".
+10. Add the Python buildpack first, then add the Node.js buildpack.
+11. Make sure the buildpacks are in the correct order (Python first, then Node.js). You can drag and drop them if needed.
+12. Scroll back to the top navigation bar and click on "Deploy".
+13. Next to "Deployment method", select "GitHub". Connect to your GitHub repository by typing its name, searching for it, and connecting to it.
+14. Enable automatic deploys and then manually deploy the branch.
+15. Wait for the app to be deployed.
