@@ -491,4 +491,21 @@ def remove_income():
         print("Invalid index. Please enter a valid index.")
 
 
+def get_expense_index():
+    """
+    Get the index of the expense to update or remove.
+    """
+    while True:
+        index_str = input(
+            "Enter the index of the expense you want to update/remove:\n")
+        try:
+            index = int(index_str)
+            if index <= 0:
+                print("Invalid index: Index must be a positive number.")
+            else:
+                return index
+        except ValueError:
+            print("Invalid index: Please enter a valid number.")
+
+
 total_incomes = 0  # Initialize total incomes
