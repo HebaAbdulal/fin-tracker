@@ -571,4 +571,8 @@ def remove_expense():
         print("Invalid index. Please enter a valid index.")
 
 
+budget_data = {}
+
+
+
 total_incomes = 0  # Initialize total incomes
