@@ -123,7 +123,7 @@ def display_income_data():
     print("Displaying income data...\n")
     income_worksheet = SHEET.worksheet("income")
     incomes = income_worksheet.get_all_values()
-    
+
     # Create a table to display the income data
     table = Table(title="Income Data")
     table.add_column("#", justify="right")
@@ -803,10 +803,8 @@ def main():
             print("Exiting Expense Tracker. Goodbye!")
             return
         else:
-            print("Invalid choice. Please enter 'yes' to start or 'exit' to quit.")
+            print("Please enter 'yes' to start or 'exit' to quit.")
 
 
 if __name__ == "__main__":
     main()
-
-
