@@ -417,7 +417,7 @@ def update_budget_worksheet(budget_data):
     print("Budget worksheet updated successfully.\n")
 
 
-def get_income_index():
+def get_income_index(num_of_rows):
     """
     Get the index of the income to update or remove.
     """
@@ -425,14 +425,14 @@ def get_income_index():
         index_str = input(
             "Enter the index of the income you want to update/remove:\n")
         try:
-            index = int(index_str)
-            if index <= 0:
+            index = int(index_str) + 1
+            if index <= 1:
                 print("Invalid index: Index must be a positive number.")
             else:
                 # Check if the index exists in the income worksheet
                 income_worksheet = SHEET.worksheet("income")
                 incomes = income_worksheet.get_all_values()
-                if index <= len(incomes):
+                if index <= num_of_rows:
                     return index
                 else:
                     print("Index does not exist. Please enter a valid index.")
