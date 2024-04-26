@@ -90,7 +90,7 @@ The original flowchart was an initial draft created before the project began. Ho
 
 - Income Tracking:
     - __Input income data: Users input amount, description, and date.__
-    - __Validate input: Ensure positive numbers; provide error feedback.__
+    - __Validate input: Ensure positive numbers for income amount, letters for description and a correct date format; provide error feedback.__
     <br>
 
     ![Screenshot of income input and validation screen](assets/images/income-validation.png)
@@ -101,7 +101,7 @@ The original flowchart was an initial draft created before the project began. Ho
 
 - Expense Tracking:
     - __Input expense data: Amount, description, date.__
-    - __Validate input: Ensure positive numbers; provide error feedback.__
+    - __Validate input: Ensure positive numbers for expense amount, letters for description and a correct date format; provide error feedback.__
     <br>
 
     ![Screenshot of expense input and validation screen](assets/images/expense-validation.png)
@@ -113,9 +113,6 @@ The original flowchart was an initial draft created before the project began. Ho
     - __Summary: Total incomes, expenses.__
     - __Budget allocation: Summary of budget vs. actual expenses.__
     - __Calculate remaining amount.__
-    <br>
-
-    ![Screenshot of remaining amount](assets/images/remaining-amount.png)
     <br>
 
 - User Interaction:
@@ -146,11 +143,11 @@ The original flowchart was an initial draft created before the project began. Ho
 <br>
 
 ### Library imports
-- gspread 
-- google.oauth2.service_account
-- rich
-- os
-- datetime
+- gspread; simplifies accessing and modifying Google Sheets.
+- google.oauth2.service_account;  aids in securely authenticating requests to Google APIs using service accounts.
+- rich; enhances terminal-based text output with various formatting options such as colors, styles, and table
+- os; includes functions that can be used for various operating system-related tasks, such as clearing the terminal screen.
+- datetime; provides classes and functions for working with dates and times.
 <br>
 
 ### Other tools
