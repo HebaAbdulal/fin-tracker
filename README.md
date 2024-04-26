@@ -61,53 +61,82 @@ With Fin Tracker, managing your finances has never been easier. Say goodbye to t
 ## Design
 
 ### Flowchart
-[First draft flowchart made before starting the project](assets/images/flowchart.png)
+<br>
+
+The original flowchart was an initial draft created before the project began. However, following an Agile methodology, I continuously update the code to improve the user experience and empower users with more control over the processes.
+<br>
+
+![First draft flowchart made before starting the project](assets/images/flowchart.png)
 <br>
 
 ### Features
 - Budget Setting and Tracking:
     - __Set budgets: For groceries, utilities, entertainment.__
     - __Validate input: Ensure positive numbers; provide error feedback.__
-[Screenshot of budget entry and validation screen](assets/images/budget-validation.png)
+    <br>
+
+    ![Screenshot of budget entry and validation screen](assets/images/budget-validation.png)
+    <br>
+        
     - __Track expenses: Notify if exceeding budget.__
-[Screenshot of exceeded expense](assets/images/exceeded-expense.png)
+    
+    <br>
+
+    ![Screenshot of exceeded expense](assets/images/exceeded-expense.png)
+    <br>
+
     - __Data stored in "fin-tracker" Google Sheets.__
-<br>
+    <br>
 
 - Income Tracking:
     - __Input income data: Users input amount, description, and date.__
     - __Validate input: Ensure positive numbers; provide error feedback.__
-[Screenshot of income input and validation screen](assets/images/income-validation.png)
+    <br>
+
+    ![Screenshot of income input and validation screen](assets/images/income-validation.png)
+    <br>
+
     - __Data stored in "fin-tracker" Google Sheets.__
-<br>
+    <br>
 
 - Expense Tracking:
     - __Input expense data: Amount, description, date.__
     - __Validate input: Ensure positive numbers; provide error feedback.__
-[Screenshot of expense input and validation screen](assets/images/expense-validation.png)
+    <br>
+    ![Screenshot of expense input and validation screen](assets/images/expense-validation.png)
+    <br>
+
     - __Data stored in "fin-tracker" Google Sheets.__
+    <br>
 - Financial Analysis:
     - __Summary: Total incomes, expenses.__
     - __Budget allocation: Summary of budget vs. actual expenses.__
     - __Calculate remaining amount.__
-[Screenshot of remaining amount](assets/images/remaining-amount.png)
-<br>
+    <br>
+
+    ![Screenshot of remaining amount](assets/images/remaining-amount.png)
+    <br>
 
 - User Interaction:
     - __Prompted options: Add income, expense, or exit.__
     - __Feedback on invalid inputs.__
-<br>
+    <br>
 
 - Data Visualization:
     - __Tabular display: Expense, income data.__
-[Screenshot of data visualization](assets/images/display.png)
+    <br>
+
+    ![Screenshot of data visualization](assets/images/display.png)
+    <br>
+
     - __Budget, expense summary tables.__
-<br>
+    <br>
 
 - Notification System:
     - __Alert on budget exceedance.__
-[Screenshot of notification system](assets/images/notification.png)
-<br>
+    <br>
+    ![Screenshot of notification system](assets/images/notification.png)
+    <br>
 
 ## Technologies used
 ### Languages
@@ -139,33 +168,78 @@ With Fin Tracker, managing your finances has never been easier. Say goodbye to t
 
 | Test Case | Description | Input | Expected Outcome | Actual Outcome | Pass/Fail |
 |-----------|-------------|-------|------------------|----------------|-----------|
-| 1         | Valid choice from main menu | 1 | Navigate to "Set Budget" | Navigated to "Set Budget" | Pass |
-| 2         | Valid choice from main menu | 2 | Navigate to "Add Income" | Navigated to "Add Income" | Pass |
-| 3         | Valid choice from main menu | 3 | Navigate to "Add Expense" | Navigated to "Add Expense" | Pass |
-| 4         | Valid choice from main menu | 4 | Navigate to "Analyze Expenses" | Navigated to "Analyze Expenses" | Pass |
-| 5         | Valid choice from main menu | 5 | Exit the application | Application exited | Pass |
-| 6         | Invalid choice from main menu | a | Display error message | Displayed error message | Pass |
-| 7         | Invalid choice from main menu | -1 | Display error message | Displayed error message | Pass |
-| 8         | Invalid choice from main menu | 6 | Display error message | Displayed error message | Pass |
-| 9         | Invalid choice from main menu | *empty* | Display error message | Displayed error message | Pass |
-| 10        | Valid choice from submenu | 1 | Add new income entry | Added new income entry | Pass |
-| 11        | Valid choice from submenu | 2 | Update existing income entry | Updated existing income entry | Pass |
-| 12        | Valid choice from submenu | 3 | Remove existing income entry | Removed existing income entry | Pass |
-| 13        | Valid choice from submenu | 4 | Navigate back to main menu | Navigated back to main menu | Pass |
-| 14        | Invalid choice from submenu | a | Display error message | Displayed error message | Pass |
-| 15        | Invalid choice from submenu | -1 | Display error message | Displayed error message | Pass |
-| 16        | Invalid choice from submenu | 5 | Display error message | Displayed error message | Pass |
-| 17        | Invalid choice from submenu | *empty* | Display error message | Displayed error message | Pass |
-| 18        | Valid index for income update | 1 | Navigate to update income entry with index 1 | Navigated to update income entry with index 1 | Pass |
-| 19        | Valid index for income update | 5 | Navigate to update income entry with index 5 | Navigated to update income entry with index 5 | Pass |
-| 20        | Invalid index for income update (out of range) | 10 | Display error message | Displayed error message | Pass |
-| 21        | Invalid index for income update (non-integer) | a | Display error message | Displayed error message | Pass |
-| 22        | Invalid index for income update (negative integer) | -1 | Display error message | Displayed error message | Pass |
-| 23        | Valid index for income removal | 1 | Remove income entry with index 1 | Removed income entry with index 1 | Pass |
-| 24        | Valid index for income removal | 5 | Remove income entry with index 5 | Removed income entry with index 5 | Pass |
-| 25        | Invalid index for income removal (out of range) | 10 | Display error message | Displayed error message | Pass |
-| 26        | Invalid index for income removal (non-integer) | a | Display error message | Displayed error message | Pass |
-| 27        | Invalid index for income removal (negative integer) | -1 | Display error message | Displayed error message | Pass |
+| 1         | Validation check for start menu choice | yes | Proceed to main menu | Proceeded to main menu | Pass |
+| 2         | Validation check for start menu choice | exit | Exit the application | Application exited | Pass |
+| 3         | Validation check for start menu choice | other input | Display error message | Displayed error message | Pass |
+| 4         | Validation check for start menu choice | numbers | Display error message | Displayed error message | Pass |
+| 5         | Validation check for start menu choice | characters | Display error message | Displayed error message | Pass |
+| 6         | Validation check for start menu choice | spaces | Display error message | Displayed error message | Pass |
+| 7         | Validation check for start menu choice | empty | Display error message | Displayed error message | Pass |
+| 8         | Valid choice from main menu | 1 | Navigate to "Set Budget" | Navigated to "Set Budget" | Pass |
+| 9         | Valid choice from main menu | 2 | Navigate to "Add Income" | Navigated to "Add Income" | Pass |
+| 10         | Valid choice from main menu | 3 | Navigate to "Add Expense" | Navigated to "Add Expense" | Pass |
+| 11         | Valid choice from main menu | 4 | Navigate to "Analyze Expenses" | Navigated to "Analyze Expenses" | Pass |
+| 12         | Valid choice from main menu | 5 | Exit the application | Application exited | Pass |
+| 13         | Invalid choice from main menu | a | Display error message | Displayed error message | Pass |
+| 14         | Invalid choice from main menu | -1 | Display error message | Displayed error message | Pass |
+| 15         | Invalid choice from main menu | 6 | Display error message | Displayed error message | Pass |
+| 16        | Invalid choice from main menu | *empty* | Display error message | Displayed error message | Pass |
+| 17        | Valid choice from submenu | 1 | Add new income entry | Added new income entry | Pass |
+| 18        | Valid choice from submenu | 2 | Update existing income entry | Updated existing income entry | Pass |
+| 19        | Valid choice from submenu | 3 | Remove existing income entry | Removed existing income entry | Pass |
+| 20        | Valid choice from submenu | 4 | Navigate back to main menu | Navigated back to main menu | Pass |
+| 21        | Invalid choice from submenu | a | Display error message | Displayed error message | Pass |
+| 22        | Invalid choice from submenu | -1 | Display error message | Displayed error message | Pass |
+| 23        | Invalid choice from submenu | 5 | Display error message | Displayed error message | Pass |
+| 24        | Invalid choice from submenu | *empty* | Display error message | Displayed error message | Pass |
+| 25        | Valid index for income update | 1 | Navigate to update income entry with index 1 | Navigated to update income entry with index 1 | Pass |
+| 26        | Valid index for income update | 5 | Navigate to update income entry with index 5 | Navigated to update income entry with index 5 | Pass |
+| 27        | Invalid index for income update (out of range) | 10 | Display error message | Displayed error message | Pass |
+| 28        | Invalid index for income update (non-integer) | a | Display error message | Displayed error message | Pass |
+| 29        | Invalid index for income update (negative integer) | -1 | Display error message | Displayed error message | Pass |
+| 30        | Valid index for income removal | 1 | Remove income entry with index 1 | Removed income entry with index 1 | Pass |
+| 31        | Valid index for income removal | 5 | Remove income entry with index 5 | Removed income entry with index 5 | Pass |
+| 32        | Invalid index for income removal (out of range) | 10 | Display error message | Displayed error message | Pass |
+| 33        | Invalid index for income removal (non-integer) | a | Display error message | Displayed error message | Pass |
+| 34        | Invalid index for income removal (negative integer) | -1 | Display error message | Displayed error message | Pass |
+| 35        | Validation check for budget amount | 1000 | Proceed to next step | Proceeded to next step | Pass |
+| 36        | Validation check for budget amount | -500 | Display error message | Displayed error message | Pass |
+| 37        | Validation check for budget amount | abc | Display error message | Displayed error message | Pass |
+| 38        | Validation check for budget amount | empty | Display error message | Displayed error message | Pass |
+| 39        | Validation check for budget amount | characters | Display error message | Displayed error message | Pass |
+| 40        | Validation check for income amount | 1000 | Proceed to next step | Proceeded to next step | Pass |
+| 41        | Validation check for income amount | -500 | Display error message | Displayed error message | Pass |
+| 42        | Validation check for income amount | abc | Display error message | Displayed error message | Pass |
+| 43        | Validation check for income amount | empty | Display error message | Displayed error message | Pass |
+| 44        | Validation check for income amount | characters | Display error message | Displayed error message | Pass |
+| 45        | Validation check for expense amount | 1000 | Proceed to next step | Proceeded to next step | Pass |
+| 46        | Validation check for expense amount | -500 | Display error message | Displayed error message | Pass |
+| 47        | Validation check for expense amount | abc | Display error message | Displayed error message | Pass |
+| 48        | Validation check for expense amount | empty | Display error message | Displayed error message | Pass |
+| 49        | Validation check for expense amount | characters | Display error message | Displayed error message | Pass |
+| 50        | Validation check for income description | letters | Proceed to next step | Proceeded to next step | Pass |
+| 51        | Validation check for income description | -500 | Display error message | Displayed error message | Pass |
+| 52        | Validation check for income description | empty | Display error message | Displayed error message | Pass |
+| 53        | Validation check for income description | characters | Display error message | Displayed error message | Pass |
+| 54        | Validation check for expense description | letters | Proceed to next step | Proceeded to next step | Pass |
+| 55        | Validation check for expense description | -500 | Display error message | Displayed error message | Pass |
+| 56        | Validation check for expense description | empty | Display error message | Displayed error message | Pass |
+| 57        | Validation check for expense description | characters | Display error message | Displayed error message | Pass |
+| 58        | Validation check for income date (YYYY-MM-DD) | YYYY-MM-DD | Proceed to next step | Proceeded to next step | Pass |
+| 59        | Validation check for income date (YYYY-MM-DD) | -500 | Display error message | Displayed error message | Pass |
+| 60        | Validation check for income date (YYYY-MM-DD) | empty | Display error message | Displayed error message | Pass |
+| 61        | Validation check for income date (YYYY-MM-DD) | characters | Display error message | Displayed error message | Pass |
+| 62        | Validation check for income date (YYYY-MM-DD) | another date format | Display error message | Displayed error message | Pass |
+| 63        | Validation check for expense date (YYYY-MM-DD) | YYYY-MM-DD | Proceed to next step | Proceeded to next step | Pass |
+| 59        | Validation check for expense date (YYYY-MM-DD) | -500 | Display error message | Displayed error message | Pass |
+| 60        | Validation check for expense date (YYYY-MM-DD) | empty | Display error message | Displayed error message | Pass |
+| 61        | Validation check for expense date (YYYY-MM-DD) | characters | Display error message | Displayed error message | Pass |
+| 62        | Validation check for expense date (YYYY-MM-DD) | another date format | Display error message | Displayed error message | Pass |
+
+
+
+
+
 
 ### Solved bug
 I encountered an issue during deployment due to the failure of pip3 freeze > requirements.txt to generate the required libraries automatically. Consequently, I manually searched for the missing libraries and their versions to resolve the issue.
