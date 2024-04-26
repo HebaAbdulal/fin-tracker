@@ -445,12 +445,11 @@ def update_income():
     Function to update income.
     """
     display_income_data()
-    index = get_income_index()
-    updated_income_data = get_income_data()
-
-    # Retrieve all income data from the worksheet
     income_worksheet = SHEET.worksheet("income")
     incomes = income_worksheet.get_all_values()
+    num_of_rows = len(incomes)
+    index = get_income_index(num_of_rows)
+    updated_income_data = get_income_data()
 
     # Check if the index is within the range of the available income data
     if index > 0 and index <= len(incomes):
