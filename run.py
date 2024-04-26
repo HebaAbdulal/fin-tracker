@@ -760,46 +760,47 @@ def main():
     # Load budget data from the existing worksheet
     budget_data = load_budget_data()
 
-    # Ask the user if they want to start the application
-    print("Do you want to start the application?")
-    choice = input("Enter 'yes' to start or 'exit' to quit: ")
+    while True:  # Loop to continuously prompt the user for input
+        # Ask the user if they want to start the application
+        print("Do you want to start the application?")
+        choice = input("Enter 'yes' to start or 'exit' to quit: ")
 
-    if choice.lower() == "yes":
-        while True:  # Add a loop to continuously prompt the user for input
-            clear_terminal()
-            main_menu()
-
-            # Get user input for menu choice
-            choice = input("Enter your choice (1-5):\n")
-
-            if choice == '1':
-                # Set budget
-                budget_data = set_budget()
+        if choice.lower() == "yes":
+            while True:  # Loop to continuously prompt the user for input
                 clear_terminal()
-                update_budget_worksheet(budget_data)
-                display_budget(budget_data)
-            elif choice == '2':
-                # Add Income
-                add_income()
-            elif choice == '3':
-                # Add Expense
-                add_expense()
-            elif choice == '4':
-                # Analyze Expenses
-                analyze_expenses_report(budget_data)
-            elif choice == '5':
-                # Exit
-                print("Exiting Expense Tracker. Goodbye!")
-                return
-            else:
-                print("Invalid choice. Please enter a valid option.")
+                main_menu()
 
-            input("Press Enter to continue...")
-    elif choice.lower() == "exit":
-        print("Exiting Expense Tracker. Goodbye!")
-        return
-    else:
-        print("Invalid choice. Please enter 'yes' to start or 'exit' to quit.")
+                # Get user input for menu choice
+                choice = input("Enter your choice (1-5):\n")
+
+                if choice == '1':
+                    # Set budget
+                    budget_data = set_budget()
+                    clear_terminal()
+                    update_budget_worksheet(budget_data)
+                    display_budget(budget_data)
+                elif choice == '2':
+                    # Add Income
+                    add_income()
+                elif choice == '3':
+                    # Add Expense
+                    add_expense()
+                elif choice == '4':
+                    # Analyze Expenses
+                    analyze_expenses_report(budget_data)
+                elif choice == '5':
+                    # Exit
+                    print("Exiting Expense Tracker. Goodbye!")
+                    return
+                else:
+                    print("Invalid choice. Please enter a valid option.")
+
+                input("Press Enter to continue...")
+        elif choice.lower() == "exit":
+            print("Exiting Expense Tracker. Goodbye!")
+            return
+        else:
+            print("Invalid choice. Please enter 'yes' to start or 'exit' to quit.")
 
 
 if __name__ == "__main__":
