@@ -523,7 +523,7 @@ def remove_income():
         print("Invalid index. Please enter a valid index.")
 
 
-def get_expense_index():
+def get_expense_index(num_of_rows):
     """
     Get the index of the expense to update or remove.
     """
@@ -531,11 +531,14 @@ def get_expense_index():
         index_str = input(
             "Enter the index of the expense you want to update/remove:\n")
         try:
-            index = int(index_str)
-            if index <= 0:
+            index = int(index_str) + 1
+            if index <= 1:
                 print("Invalid index: Index must be a positive number.")
             else:
-                return index
+                if index <= num_of_rows:
+                    return index
+                else:
+                    print("Index does not exist. Please enter a valid index.")
         except ValueError:
             print("Invalid index: Please enter a valid number.")
 
