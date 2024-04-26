@@ -505,7 +505,10 @@ def remove_income():
     # Display current income data before removal
     display_income_data()
 
-    index = get_income_index()
+    # Get the number of rows in the income worksheet
+    num_of_rows = len(income_worksheet.get_all_values())
+
+    index = get_income_index(num_of_rows)
 
     # Retrieve all income data from the worksheet
     incomes = income_worksheet.get_all_values()
