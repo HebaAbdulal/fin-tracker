@@ -103,7 +103,7 @@ The original flowchart was an initial draft created before the project began. Ho
     - __Input expense data: Amount, description, date.__
     - __Validate input: Ensure positive numbers; provide error feedback.__
     <br>
-    
+
     ![Screenshot of expense input and validation screen](assets/images/expense-validation.png)
     <br>
 
@@ -136,6 +136,7 @@ The original flowchart was an initial draft created before the project began. Ho
 - Notification System:
     - __Alert on budget exceedance.__
     <br>
+    
     ![Screenshot of notification system](assets/images/notification.png)
     <br>
 
