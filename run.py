@@ -590,7 +590,10 @@ def remove_expense():
     # Display current expense data before removal
     display_expense_data()
 
-    index = get_expense_index()
+    # Get the number of rows in the income worksheet
+    num_of_rows = len(expense_worksheet.get_all_values())
+
+    index = get_expense_index(num_of_rows)
 
     # Retrieve all income data from the worksheet
     expenses = expense_worksheet.get_all_values()
