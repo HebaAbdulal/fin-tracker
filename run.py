@@ -244,13 +244,16 @@ def display_expense_data():
 
     # Create a table to display the expense data
     table = Table(title="Expense Data")
+    table.add_column("#", justify="right")
     table.add_column("Amount", justify="right")
     table.add_column("Description", justify="right")
     table.add_column("Date", justify="right")
+    i = 1
 
     # Skip the header row
     for row in expenses[1:]:
-        table.add_row(*row)
+        table.add_row(str(i), *row)
+        i += 1
 
     console.print(table)
 
