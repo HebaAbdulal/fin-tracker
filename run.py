@@ -123,8 +123,20 @@ def display_income_data():
     print("Displaying income data...\n")
     income_worksheet = SHEET.worksheet("income")
     incomes = income_worksheet.get_all_values()
-    for row in incomes:
-        print(row)
+    
+    # Create a table to display the income data
+    table = Table(title="Income Data")
+    table.add_column("#", justify="right")
+    table.add_column("Amount", justify="right")
+    table.add_column("Description", justify="right")
+    table.add_column("Date", justify="right")
+    i = 1
+    # Skip the header row
+    for row in incomes[1:]:
+        table.add_row(str(i), *row)
+        i += 1
+
+    console.print(table)
 
 
 def calculate_incomes():
@@ -785,3 +797,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+

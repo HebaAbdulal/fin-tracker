@@ -1,6 +1,6 @@
 # Fin Tracker
 - Deployed link: [Fin Tracker](https://fintracker-d91e74e9f79d.herokuapp.com/)
-- [Screenshot of the running program "Fin Tracker"](assets/images/start.png)
+- ![Screenshot of the running program "Fin Tracker"](assets/images/start.png)
 
 <br>
 
